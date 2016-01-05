@@ -7,7 +7,7 @@ def randomCalc():
            '-':operator.sub,
            '*':operator.mul,
            '/':operator.truediv}
-    num1 = randint(1,40)
+    num1 = randint(40,80)
     num2 = randint(1,40)
     op = random.choice(list(ops.keys()))
     answer = ops.get(op)(num1,num2)
@@ -16,8 +16,13 @@ def randomCalc():
 
 def askQuestion():
     answer = randomCalc()
-    guess = float(input())
-    return guess == answer
+    print answer
+    guess = float(input("Give your answer\n>"))
+    
+    if guess == answer:
+        print "Correct"
+    else:
+        print "Wrong"
 
 if __name__ == '__main__':
     askQuestion()
