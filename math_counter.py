@@ -21,7 +21,6 @@ def askQuestion():
     answer = randomCalc()
     print answer
     guess = float(input("Give your answer\n>"))
-
     if guess == answer:
         print "Correct"
     else:
@@ -37,7 +36,6 @@ def counter(n):
     for k in range(0, n+1):
         print("You have {} seconds to answer.".format(k))
         time.sleep(1)
-
 
 def menu():
     while True:
