@@ -5,7 +5,7 @@ import threading
 from random import randint
 
 
-def randomCalc():
+def random_calc():
     ops = {'+':operator.add,
            '-':operator.sub,
            '*':operator.mul,
@@ -17,10 +17,10 @@ def randomCalc():
     print('What is {} {} {}?\n'.format(num1, op, num2))
     return answer
 
-def askQuestion():
-    answer = randomCalc()
+def ask_question():
+    answer = random_calc()
     print answer
-    guess = float(input("Give your answer\n>"))
+    guess = (input("Give your answer\n>"))
     if guess == answer:
         print "Correct"
     else:
@@ -34,9 +34,11 @@ def background(f):
 @background
 def counter(n):
     for k in range(0, n+1):
-        print("You have {} seconds to answer.".format(k))
+        print("You have {} seconds to answer.".format(n-k))
         time.sleep(1)
+    return
 
+ 
 def menu():
     while True:
         select  = input("To play press (1)\nTo exit press (2)\n>")
@@ -45,8 +47,8 @@ def menu():
             game_q = input("Select your game(questions)>")
             for i in range(game_q):
                 counter(game_s)
-                askQuestion()
-                i+=i
+                ask_question()
+                #    reset_counter()
         elif select == 2:
             break
                 
